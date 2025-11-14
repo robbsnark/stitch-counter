@@ -6,26 +6,30 @@ public class Program {
         Scanner scan = new Scanner(System.in);
 
         while (true) {
-            System.out.println("What's your preferred stitch to use? \n" +
-            "SC - Single crochet \n" + 
-            "HDC - Half double crochet \n" +
-            "DC - Double crochet");
-            String stitchPick = scan.nextLine();
+            System.out.println("Which shape would you like to crochet? \n" +
+            "C - Circle \n" + 
+            "S - Square \n" + 
+            "F - Flower");
+            String shapePick = scan.nextLine();
+
+            Shape shape;
             
-            switch (stitchPick.toUpperCase()) {
-                case "SC":
-                    IncreaseGuide.singleCrochet(stitchPick);
+            switch (shapePick.toUpperCase()) {
+                case "C":
+                    shape = new Circle(shapePick);
                     break;
-                case "HDC":
-                    IncreaseGuide.halfDoubleCrochet(stitchPick);
+                case "S":
+                    shape = new Square(shapePick);
                     break;
-                case "DC":
-                    IncreaseGuide.doubleCrochet(stitchPick);
+                case "F":
+                    shape = new Flower(shapePick);
                     break;
                 default:
                     System.out.println("Sorry, I didn't catch that.");
                     continue;
-            } 
+            }
+
+            shape.generatePattern();
             break;
         }
 
@@ -33,7 +37,6 @@ public class Program {
         // OLD CODE
 
         // If-else version of stitchPick switchcase:
-
         // if (stitchPick.equals("SC")){
         //     IncreaseGuide.singleCrochet(stitchPick);
         // } else if (stitchPick.equals("HDC")) {
@@ -45,9 +48,7 @@ public class Program {
         //     continue;
         // } break;
 
-
         // int circleSize = scan.nextInt();
-
         // while (circleSize < 6) {
         //     System.out.println("That's too small for this size yarn.");
         //     System.out.println("How wide would you like your circle to be?");
@@ -58,7 +59,6 @@ public class Program {
         //     System.out.println("How wide would you like your circle to be?");
         //     circleSize = scan.nextInt();   
         // }
-
         // int increaseCounter = IncreaseGuide.increaseGuide(circleSize);
 
         // Below is the original counter that only showed how many stitches needed per row

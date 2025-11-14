@@ -5,7 +5,6 @@ public class IncreaseGuide {
         // stitchPick - The type of preferred stitch the user put in the terminal
         // currentRow - Specifies rows of crochet in ascending order
         // increaseCount - Determines how many dc stitches are needed for each row
-
         /*
         for (int i = 1; i < 11; i++) {
             int currentRow = circleSize * i;
@@ -24,13 +23,9 @@ public class IncreaseGuide {
     }
 
     public static void singleCrochet(String stitchPick) {
-        // Suggested starting stitches for sc: 6-8
-        // Maybe an idea to have the user pick 6 or 8? 
-        // But honestly the difference is so small I might skip it
         // This way of printing the first row is pretty manual/hardcodey:
 
         int scSmall = 6;
-        int scLarge = 8;
         String startingRow = "Row 1: " + scSmall + "sc in MR (" + scSmall + ")";
         System.out.println(startingRow);
 
@@ -54,8 +49,6 @@ public class IncreaseGuide {
     }
 
     public static void halfDoubleCrochet(String stitchPick) {
-        // Suggested starting stitches for hdc: 8-10
-
         int hdcSmall = 8;
         int hdcLarge = 10;
         String startingRow = "Row 1: " + hdcSmall + "hdc in MR (" + hdcSmall + ")";
@@ -75,8 +68,6 @@ public class IncreaseGuide {
     }
 
     public static void doubleCrochet(String stitchPick) {
-        // Suggested starting stitches for dc: 10-12
-
         int dcSmall = 10;
         int dcLarge = 12;
         String startingRow = "Row 1: " + dcSmall + "dc in MR (" + dcSmall + ")";
@@ -93,8 +84,5 @@ public class IncreaseGuide {
                 System.out.println("Row " + i + ": " + "(2dc) x " + dcSmall + " (" + startingStitch + ")");
             }
         }
-
     }
-
-
 }
