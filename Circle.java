@@ -10,10 +10,11 @@ public class Circle extends Shape {
     @Override
     public void generatePattern() {
         while (true) {
-            System.out.println("What's your preferred stitch to use? \n" +
+            System.out.println("Please select your preferred stitch, or else input number of starting stitches manually.\n" +
             "SC - Single crochet \n" + 
             "HDC - Half double crochet \n" + 
-            "DC - Double crochet");
+            "DC - Double crochet \n" +
+            "X - Input starting stitch");
             String stitchType = scan.nextLine();
             switch (stitchType.toUpperCase()) {
                 case "SC":
@@ -24,6 +25,9 @@ public class Circle extends Shape {
                     break;
                 case "DC":
                     IncreaseGuide.doubleCrochet(stitchType);
+                    break;
+                case "X":
+                    IncreaseGuide.manualStitch(stitchType);
                     break;
                 default:
                     System.out.println("Sorry, I didn't catch that.");
